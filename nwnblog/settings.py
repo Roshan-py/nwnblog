@@ -22,12 +22,12 @@ STATIC_DIR = Path(__file__).joinpath(BASE_DIR,'static')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
-
+#SECRET_KEY = ['django-insecure-6iw95ss)t!w=@@@fjfjh$(_qx_ozp+joky+4=i!=kewcbm6c6l']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['nwnblog.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['nwnblog.herokuapp.com','*']
 
 
 # Application definition
@@ -79,12 +79,8 @@ WSGI_APPLICATION = 'nwnblog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'nwnblog',
-        'HOST':'nwnblog.herokuapp.com',
-        'PORT':'3306',
-        'USER':'root',
-        'PASSWORD': 'roshan7674',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
