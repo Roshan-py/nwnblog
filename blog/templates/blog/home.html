@@ -7,8 +7,10 @@
     <div class="jumbotron jumbo-color">
         <div class="container">
             <h1 class="display-4" style="font-weight:bold; color:rgb(16,12,8);">{{post.title}}</h1>
+            <p style="color:green;">Tag: {{post.tags}}</p>
             <p class="lead" style="color:white;">{{post.content}}</p>
             <p>{{post.timestamp}}</p>
+
         </div>
     </div>
     {% endfor %}
