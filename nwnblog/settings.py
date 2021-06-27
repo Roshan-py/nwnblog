@@ -14,17 +14,18 @@ from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+STATIC_DIR = Path(__file__).joinpath(BASE_DIR,'static')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
-#SECRET_KEY = ['django-insecure-6iw95ss)t!w=@@@fjfjh$(_qx_ozp+joky+4=i!=kewcbm6c6l']
+#SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = ['django-insecure-6iw95ss)t!w=@@@fjfjh$(_qx_ozp+joky+4=i!=kewcbm6c6l']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['nwnblog.herokuapp.com','*']
 
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'nwnblog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [STATIC_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
