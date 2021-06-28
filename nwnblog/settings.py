@@ -27,7 +27,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =False
 
-ALLOWED_HOSTS = ['nwnblog.herokuapp.com','*']
+ALLOWED_HOSTS = ['nwnblog.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'nwnblog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'nwnblog',
+        'HOST': 'nwnblog.herokuapp.com',
+        'PORT': '3306',
+        'USER': 'root',
+        'PASSWORD': 'roshan7674',
     }
 }
 
